@@ -27,5 +27,5 @@ class Game_baby:
                 break
 
 
-
 computer_vs_human = Game_baby()
+computer_vs_human.start_game()
