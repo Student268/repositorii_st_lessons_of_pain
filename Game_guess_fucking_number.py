@@ -3,13 +3,11 @@ from random import randint
 class Game_baby:
     def __init__(self):
         self.fucking_number = randint(0, 10)
+        print(self.fucking_number)
+        self.start_game()
 
     def __del__(self):
         print('Игра окончена')
-        pass
-
-    def check_number(self) -> int:
-        print(self.fucking_number)
 
     def start_game(self) -> int:
         while True:
@@ -27,10 +25,7 @@ class Game_baby:
             if int(human_enter_number) == self.fucking_number:
                 print('Молодец, кожанное недоразумение')
                 break
-            else:
-                pass
+
 
 
 computer_vs_human = Game_baby()
-computer_vs_human.start_game()
-computer_vs_human.fucking_number()
