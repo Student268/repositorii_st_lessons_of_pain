@@ -1,16 +1,15 @@
-from random import randint
+class game_engien:
 
-class Game_baby:
-    def __init__(self):
-        self.fucking_number = randint(0, 10)
-        print(self.fucking_number)
-        self.start_game()
+    def choose_game(self) -> int:
+        enter_game_name = input('В какую игру будем играть?\n 1 - угадывать \n 2 - загадывать\n')
+        if enter_game_name == '1':
+            self.start_game_houman_play()
+        if enter_game_name == '2':
+            self.start_game_computer_play()
 
-    def __del__(self):
-        print('Игра окончена')
-
-    def start_game(self) -> int:
+    def start_game_houman_play(self) -> int:
         while True:
+            print(self.fucking_number)
             human_enter_number = input('Вводи свое число, двуногое ничтожество\n')
             if human_enter_number.isnumeric() == False:
                 print('Это не похоже на число, думал ты умеешь отличать цифры от букв')
@@ -26,8 +25,13 @@ class Game_baby:
                 print('Молодец, кожанное недоразумение')
                 break
 
-
-computer_vs_human = Game_baby()
-computer_vs_human.start_game()
-
-
+    def start_game_computer_play(self) -> int:
+        while True:
+            print(self.fucking_number)
+            answer_houman = input('я угадал твое число?\n')
+            if answer_houman == '<':
+                self.fucking_number -= 1
+            if answer_houman == '>':
+                self.fucking_number += 1
+            if answer_houman == '=':
+                break
