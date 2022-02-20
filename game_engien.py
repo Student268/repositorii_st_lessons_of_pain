@@ -10,20 +10,22 @@ class game_engien:
     def start_game_houman_play(self) -> int:
         while True:
             print(self.fucking_number)
-            human_enter_number = input('Вводи свое число, двуногое ничтожество\n')
-            if human_enter_number.isnumeric() == False:
-                print('Это не похоже на число, думал ты умеешь отличать цифры от букв')
-            if int(human_enter_number) > 10:
-                print('От 1 до 10, ты куда полез?')
-            if int(human_enter_number) < 0:
-                print('От 1 до 10, ты куда полез?')
-            if int(human_enter_number) < self.fucking_number:
-                print('это меньше, чем нужно')
-            if int(human_enter_number) > self.fucking_number:
-                print('это больше, чем нужно')
-            if int(human_enter_number) == self.fucking_number:
-                print('Молодец, кожанное недоразумение')
-                break
+            try:
+                human_enter_number = input('Вводи свое число, двуногое ничтожество\n')
+                if int(human_enter_number) > 10:
+                    print('От 1 до 10, ты куда полез?')
+                if int(human_enter_number) < 0:
+                    print('От 1 до 10, ты куда полез?')
+                if int(human_enter_number) < self.fucking_number:
+                    print('это меньше, чем нужно')
+                if int(human_enter_number) > self.fucking_number:
+                    print('это больше, чем нужно')
+                if int(human_enter_number) == self.fucking_number:
+                    print('Молодец, кожанное недоразумение')
+                    break
+            except ValueError:
+                print('Это не похоже на целое число, думал ты умеешь отличать цифры от букв')
+
 
     def start_game_computer_play(self) -> int:
         while True:
